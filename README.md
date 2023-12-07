@@ -498,3 +498,85 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 ## State Management
 
+### Redux Toolkit
+
+React redux is an advanced state management library for React. As we learned earlier, React only supports component level state management. In a big and complex application, large number of components are used. React recommends to move the state to the top level component and pass the state to the nested component using properties. It helps to some extent but it becomes complex when the components increases.
+
+React redux chips in and helps to maintain state at the application level. React redux allows any component to access the state at any time. Also, it allows any component to change the state of the application at any time.
+
+**Concepts**: React redux maintains the state of the application in a single place called Redux store. React component can get the latest state from the store as well as change the state at any time. Redux provides a simple process to get and set the current state of the application and involves below concepts.
+
+**Store**: The central place to store the state of the application.
+
+**Actions**: Action is an plain object with the type of the action to be done and the input (called payload) necessary to do the action. For example, action for adding an item in the store contains ADD_ITEM as type and an object with item's details as payload. The action can be represented as −
+
+```
+{ 
+   type: 'ADD_ITEM', 
+   payload: { name: '..', ... }
+}
+```
+
+**Reducers**: Reducers are pure functions used to create a new state based on the existing state and the current action. It returns the newly created state. For example, in add item scenario, it creates a new item list and merges the item from the state and new item and returns the newly created list.
+
+**Action creators: Action creator creates an action with proper action type and data necessary for the action and returns the action. For example, addItem action creator returns below object −
+
+```
+{ 
+   type: 'ADD_ITEM', 
+   payload: { name: '..', ... }
+}
+```
+
+**Component**: Component can connect to the store to get the current state and dispatch action to the store so that the store executes the action and updates it's current state.
+
+* React component subscribes to the store and get the latest state during initialization of the application.
+* To change the state, React component creates necessary action and dispatches the action.
+* Reducer creates a new state based on the action and returns it. Store updates itself with the new state.
+* Once the state changes, store sends the updated state to all its subscribed component.
+
+### Redux API
+
+Redux provides a single api, connect which will connect a components to the store and allows the component to get and set the state of the store.
+
+The signature of the connect API is −
+
+```
+function connect(mapStateToProps?, mapDispatchToProps?, mergeProps?, options?)
+```
+
+All parameters are optional and it returns a HOC (higher order component). A higher order component is a function which wraps a component and returns a new component.
+
+```
+let hoc = connect(mapStateToProps, mapDispatchToProps) 
+let connectedComponent = hoc(component)
+```
+
+Let us see the first two parameters which will be enough for most cases.
+
+* mapStateToProps − Accepts a function with below signature.
+
+```
+(state, ownProps?) => Object
+```
+
+Here, state refers current state of the store and Object refers the new props of the component. It gets called whenever the state of the store is updated.
+
+```
+(state) => { prop1: this.state.anyvalue }
+```
+
+* mapDispatchToProps − Accepts a function with below signature.
+
+```
+Object | (dispatch, ownProps?) => Object
+```
+
+Here, dispatch refers the dispatch object used to dispatch action in the redux store and Object refers one or more dispatch functions as props of the component.
+
+```
+(dispatch) => {
+   addDispatcher: (dispatch) => dispatch({ type: 'ADD_ITEM', payload: { } }),
+   removeispatcher: (dispatch) => dispatch({ type: 'REMOVE_ITEM', payload: { } }),
+}
+```
