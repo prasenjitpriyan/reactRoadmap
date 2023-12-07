@@ -647,7 +647,7 @@ function ExampleComponent() {
 export default ExampleComponent;
 ```
 
-In this example, the ExampleComponent is a functional component that uses Axios to fetch data from the https://api.example.com/data endpoint. The fetched data is stored in the component’s state using the setData function from the useState hook.
+In this example, the ExampleComponent is a functional component that uses Axios to fetch data from the <https://api.example.com/data> endpoint. The fetched data is stored in the component’s state using the setData function from the useState hook.
 
 The useEffect hook is used to perform the data fetching when the component mounts. It calls an asynchronous function fetchData which makes the GET request using Axios. The response data is then set in the component’s state using setData.
 
@@ -662,7 +662,7 @@ Axios is essential in React for various purposes:
 * Axios ensures consistent handling of errors and responses, making it convenient to manage errors and present meaningful messages to users.
 * The versatility of Axios shines through its compatibility with both web browsers and Node.js, allowing its usage in diverse environments.
 
-### To install Axios in a React project, you can follow these steps:
+### To install Axios in a React project, you can follow these steps
 
 * Step 1: Open the terminal and navigate to the root directory of your React project by using the appropriate commands or graphical interface available in your operating system.
 * Install Axios using npm by running the following command: **npm install axios**
@@ -670,7 +670,7 @@ Axios is essential in React for various purposes:
 
 Now, you have successfully installed Axios in your React project and can proceed to use it for making HTTP requests and handling data retrieval and submission operations.
 
-### How to Make a GET Request? 
+### How to Make a GET Request?
 
 In the context of using the Axios library, a GET request refers to making an HTTP GET request to a specified URL or Node.js environment. Here’s a code example demonstrating how to perform a GET request using the popular Python library called requests:
 
@@ -691,7 +691,7 @@ else:
     print('GET request failed with status code: ', response.status_code)
 ```
 
-In the provided code snippet, we start by importing the requests library and indicating the URL we desire to send the GET request to, which is https://api.example.com/data. By utilizing requests.get(url), we initiate the GET request and store the resulting response in the response variable. 
+In the provided code snippet, we start by importing the requests library and indicating the URL we desire to send the GET request to, which is <https://api.example.com/data>. By utilizing requests.get(url), we initiate the GET request and store the resulting response in the response variable.
 
 Following that, we evaluate the success of the request by inspecting the status code (response.status_code). In the case of a 200 status code, indicating a successful response, we can retrieve the response data using response.json(). It’s important to note that in this example, we assume the response data is in JSON format.
 
@@ -725,7 +725,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-In this provided code example, we begin by importing the axios library, which offers a straightforward and user-friendly approach to making HTTP requests. Within the handleSubmit function, we utilize axios.post to send a POST request to the designated URL (https://api.example.com/data), with the data being passed as the second argument. In this particular case, the data takes the form of a JavaScript object that includes key1 and key2, along with their respective values.
+In this provided code example, we begin by importing the axios library, which offers a straightforward and user-friendly approach to making HTTP requests. Within the handleSubmit function, we utilize axios.post to send a POST request to the designated URL (<https://api.example.com/data>), with the data being passed as the second argument. In this particular case, the data takes the form of a JavaScript object that includes key1 and key2, along with their respective values.
 
 When the button is clicked, the handleSubmit function is called asynchronously. We use await to wait for the response from the server. If the request is successful, we can access the response data through response.data. If any errors occur, they will be caught in the catch block, where you can handle them accordingly. Note that you need to install Axios in your React project by running npm install axios or yarn add axios before using it.
 
@@ -757,7 +757,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-In this example, we import the axios library and create a React component called MyComponent. Inside the handleUpdate function, we use axios.put to send a PUT request to the specified URL (https://api.example.com/data/1) and pass the updated data as the second argument. Here, we are updating the data at the resource with an ID of 1 by providing a new value for key1.
+In this example, we import the axios library and create a React component called MyComponent. Inside the handleUpdate function, we use axios.put to send a PUT request to the specified URL (<https://api.example.com/data/1>) and pass the updated data as the second argument. Here, we are updating the data at the resource with an ID of 1 by providing a new value for key1.
 
 When the “Update” button is clicked, the handleUpdate function is called asynchronously. We use await to wait for the response from the server. If the request is successful, we can access the response data through response.data. If any errors occur, they will be caught in the catch block, where you can handle them accordingly. Remember to install Axios in your React project by running npm install axios or yarn add axios before using it.
 
@@ -868,7 +868,7 @@ function ExampleComponent() {
 export default ExampleComponent;
 ```
 
-In the given example, an Axios instance is created using axios.create(), where an object with configuration options is passed as an argument. The configuration sets the baseURL to ‘https://api.example.com’ and includes custom headers. Subsequently, the Axios instance is utilized to perform a GET request to the /data endpoint. The response from the request is handled using .then(), while any errors that occur are caught using .catch().
+In the given example, an Axios instance is created using axios.create(), where an object with configuration options is passed as an argument. The configuration sets the baseURL to ‘<https://api.example.com’> and includes custom headers. Subsequently, the Axios instance is utilized to perform a GET request to the /data endpoint. The response from the request is handled using .then(), while any errors that occur are caught using .catch().
 
 Creating an Axios instance allows you to have a customized Axios client specifically for a certain API or set of requests within your React component. It provides flexibility and control over the Axios configuration and makes it easier to manage multiple API endpoints and headers.
 
